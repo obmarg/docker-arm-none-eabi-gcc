@@ -5,6 +5,8 @@ WORKDIR /work
 
 ADD . /work
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Install any needed packages specified in requirements.txt
 RUN apt update && \
     apt upgrade -y && \
@@ -15,7 +17,8 @@ RUN apt update && \
       bzip2 \
       libqt5widgets5 \
       unzip \
-      wget && \
+      wget \
+      awscli && \
     apt clean && \
     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2 -O cortex_m.tar.bz2 && \
     tar -xjf cortex_m.tar.bz2 && \
