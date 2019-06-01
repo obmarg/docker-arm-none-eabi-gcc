@@ -18,6 +18,7 @@ RUN apt update && \
       libqt5widgets5 \
       unzip \
       wget \
+      jq \
       awscli && \
     apt clean && \
     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2 -O cortex_m.tar.bz2 && \
